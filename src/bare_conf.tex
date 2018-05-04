@@ -63,7 +63,7 @@
 \usepackage{graphicx,url}
 \usepackage{float}
 
-\usepackage[brazilian]{babel}
+\usepackage[brazil]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
@@ -405,6 +405,7 @@ Manaus -- AM -- Brazil}}
 
 
 \section{Introduction}
+
 % TOREVIEW: Contextualização - Imagens 360
 %   - O que são imagens 360
 %   --- Possibilidade de revisitar um momento do espaço tempo
@@ -414,7 +415,7 @@ Manaus -- AM -- Brazil}}
 Imagens 360 são uma fotografia completa do entorno, trazendo a ilusão de uma completa visão a partir de um único ponto. Câmeras 360 possuem a funcionalidade de registrar tomadas panorâmicas completas em 360 graus ao redor do ponto de captura. Atualmente, existem diversos formatos possíveis para imagens 360, sendo um dos mais adotados, o formato equiretangular. Capturas 360 são geralmente compartilhadas em mídias sociais, onde através de movimentos gestuais é possível navegar na imagem. Aplicações de Realidade Virtual trazem a possibilidade de uma visão mais imersiva de imagens 360, permitindo ao usuário a sensação de estar dentro da imagem.
 
 % TOREVIEW: Realidade Virtual e displays
-Recentemente, dispositivos de realidade virtual (VR, sigla inglês para \textit{Virtual Reality}) se tornaram acessíveis para uma grande parte da população. Neste tipo de aparelho, um mundo virtual é renderizado de maneira estéreo, ou seja, com uma visão para cada olho, passando assim a sensação de profundidade e maior presença em um ambiente virtual. A tecnologia por trás dos displays \textit{VR} tem evoluido muito, porém esbarram na necessidade de oferecer uma grande densidade de pixels por grau de campo de visão. Segundo [?], o olho humano possui uma resolução estimada de 60 pixels por grau, ou seja, um aparelho modesto de 100 graus de campo de visão deveria prover uma resolução de 6K para fornecer uma ilusão espacial mais realista possível.
+Recentemente, dispositivos de realidade virtual (VR, sigla inglês para \textit{Virtual Reality}) se tornaram acessíveis para uma grande parte da população. Neste tipo de aparelho, um mundo virtual é renderizado de maneira estéreo, ou seja, com uma visão para cada olho, passando assim a sensação de profundidade e maior presença em um ambiente virtual. A tecnologia por trás dos displays \textit{VR} tem evoluido muito, porém esbarram na necessidade de oferecer uma grande densidade de pixels por grau de campo de visão. Segundo \cite{va1965visual}, o olho humano possui uma resolução estimada de 60 pixels por grau, ou seja, um aparelho modesto de 100 graus de campo de visão deveria prover uma resolução de 6K para fornecer uma ilusão espacial mais realista possível.
 
 % TODO: Visualizadores de imagens 360
 % - Aplicações de visualização simulação a visualização do conteúdo envelopado numa esfera
@@ -424,24 +425,24 @@ Recentemente, dispositivos de realidade virtual (VR, sigla inglês para \textit{
 Aplicações de visualização de imagens 360 renderizam seu conteúdo envelopado numa esfera, ou seja, como se o conteúdo visual estivesse disposto ao redor do usuário, preenchendo completamente o seu campo visual, como no caso das aplicações \textit{VR}. Para tanto, requerem uma grande quantidade de píxels disponíveis de forma a manter a boa qualidade dessas visualizações. A busca pela melhor qualidade visual pode signicar escolher entre diferentes formatos de exibição, com graus variados de distorção e não uniformidade na resolução ao longo dos 360 graus possíveis.
 
 
-Diversos fatores influenciam na qualidade de uma imagem, e a avaliação de pós-processamentos em tais imagens, é um fator primordial para que não reflita na experiência do usuário, principalmente em aplicações que utilizam dispositivos de Realidade Virtual.
+% Diversos fatores influenciam na qualidade de uma imagem, e a avaliação de pós-processamentos em tais imagens, é um fator primordial para que não reflita na experiência do usuário, principalmente em aplicações que utilizam dispositivos de Realidade Virtual.
 
 
 % Qualidade de imagem 360
 % - Parâmetros de configuração
 % - Necessidade de uma ferramenta para comparar diferentes sets de configuração
-Ao escolher um formato e resolução para uma imagens 360, é necessário levar em conta qual dispositivo essa será exibida. Assim acaba sendo mandatório, um contínuo ciclo de ajuste e teste no dispositivo até que seja possível encontrar as configurações ideais. O que gera assim a necessidade de uma ferramenta que possa simular e comparar diferentes configurações de imagem e de dispositivo afim de permitir uma escolha mais bem informada.
+Ao escolher um formato e resolução para uma imagem 360 é necessário levar em conta qual dispositivo essa será exibida. Assim acaba sendo mandatório, um contínuo ciclo de ajuste e teste no dispositivo até que seja possível encontrar as configurações ideais. O que gera assim a necessidade de uma ferramenta que possa simular e comparar diferentes configurações de imagem e de dispositivo afim de permitir uma escolha mais bem informada.
 
 Existem duas maneiras de avaliação da qualidade de imagem: Métricas Subjetivas e Métricas Objetivas. A primeira, é a realização de testes em que observadores avaliam uma sequência de imagens e a segunda, é uma avaliação automática por meio de algoritmos implementados com base em modelos matemáticos
 
 % TODO: Unity como ferramenta default para desenvolver VR apps
-A Unity é uma \textit{engine} de desenvolvimento de jogos para plataformas móveis, consoles, computadores, além de dispositivos de realidade virtual e aumentada. Atualmente, a Unity é utilizada por grupos de desenvolvedores independentes e grandes corporações, tais como Microsoft e Disney.
+A \textit{Unity} é uma \textit{engine} de desenvolvimento de jogos para plataformas móveis, consoles, computadores, além de dispositivos de realidade virtual e aumentada. Atualmente, a \textit{Unity} é muito utilizada por grupos de desenvolvedores independentes e grandes corporações, tais como Microsoft e Disney, e é a ferramenta mais adotada no desenvolvimento de aplicações \textit{VR}.
 
 % TODO: Proposta
-Neste artigo propomos uma ferramenta de avaliação de qualidade de imagem 360 para o editor da \textit{Unity} utilizando métricas objetivas.
+Neste artigo propomos uma ferramenta de avaliação de qualidade de imagem 360 para o editor da \textit{Unity} utilizando métricas objetivas. Para avaliações em condições próximas a de cenários reais, nossa ferramenta deve ser capaz de simular a visualização sob pré-determinados valores de ângulos de campo de visão e resolução.
 
 % TOREPHRASE: Estrutura do artigo
-Na seção \ref{sec:relatedworks} analisamos alguns trabalhos que descrevem o compromisso de formato/qualidade para imagens 360 e que avaliam a qualidade de imagem 360 utilizando métricas objetivas. Os diferentes formatos e projeções utilizadas foram descritas na seção \ref{sec:imageprojection}. As métricas objetivas adotadas por este trabalho foram compiladas na seção \ref{sec:metrics}. Na seção \ref{sec:unitytool} é feita uma descrição detalhada da nossa implementação. Resultados são discutidos na seção \ref{sec:results}. Por fim, as conclusões e perspectivas de trabalhos futuros são mencionadas na seção \ref{sec:conclusion}.
+Na seção \ref{sec:relatedworks} analisamos alguns trabalhos que descrevem a relação de compromisso entre formato e a qualidade de imagens 360 e que avaliam imagens 360 utilizando métricas objetivas. Os diferentes formatos e projeções utilizadas foram descritas na seção \ref{sec:imageprojection}. As métricas objetivas adotadas por este trabalho foram compiladas na seção \ref{sec:metrics}. Na seção \ref{sec:unitytool} é feita uma descrição detalhada da nossa implementação. Resultados são discutidos na seção \ref{sec:results}. Por fim, as conclusões e perspectivas de trabalhos futuros são mencionadas na seção \ref{sec:conclusion}.
 
 
 % An example of a floating figure using the graphicx package.
